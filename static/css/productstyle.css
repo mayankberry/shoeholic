@@ -1,0 +1,136 @@
+
+
+#nameofshoe{
+  position: absolute;
+  color: rgba(0, 0, 0, 0.179);
+  /* font-size: 25vw; */
+  font-size: calc(18.5vw + 2rem);
+  top: 18vw;
+  right: 9vw;
+  margin: 0px;
+  text-transform: uppercase;
+}
+
+.card-wrapper_pp {
+  text-align: center;
+}
+
+.card_pp {
+  box-sizing: border-box;
+  width: 1000px;
+  height: 550px;
+  padding: 40px;
+  display: inline-block;
+  margin: 100px 0;
+  border-radius: 15px;
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(3px);
+}
+
+.card-copy {
+width: 50%;
+float: right;
+text-align: left;
+/* padding: 25px 0; */
+}
+
+.card-content_pp {
+  text-align: center;
+  width: 50%;
+  float: left;
+}
+
+#content_pp{
+  color: rgba(255, 255, 255, 0.696);
+  font-weight: bold;
+}
+.category_display {
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.shoe-view img {
+  width: 300%;
+  /* position: absolute; */
+  /* right: 24vw;
+  top: -3.5vw; */
+}
+
+.btn-group_pp {
+  box-sizing: border-box;
+  width: 50%;
+  position: absolute;
+  left: 0;
+  bottom: 40px;
+  text-align: middle;
+}
+
+.btn-group_pp button {
+  margin: 0 5px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background:#f1f1f1b6;
+  border-radius: 50%;
+}
+
+.btn-buy {
+  box-sizing: border-box;
+  width: 150px;
+  height: 50px;
+  border: none;
+  background: #eff634;
+  text-transform: uppercase;
+  border-radius: 8px;
+  position: absolute;
+  bottom: 40px;
+}
+
+.price_pp {
+  font-size: 40px;
+  font-weight: 700;
+  color: aqua;
+}
+
+.item-option-select h6{
+  color: white;
+  font-weight: bold;
+}
+
+/* Styles for the size selection container */
+.item-option-select {
+  margin-bottom: 1rem;
+}
+
+/* Styles for the size selection label */
+.item-option-select h6 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+/* Styles for the size selection buttons */
+.btn-group-toggle label {
+  font-size: 0.9rem;
+  margin-right: 0.5rem;
+}
+
+/* Styles for the size selection radio buttons */
+.btn-group-toggle input[type="radio"] {
+  position: absolute;
+  clip: rect(0,0,0,0);
+  pointer-events: none;
+}
+
+.btn-group> .btn.active{
+  background-color: #eff634 !important;
+}
+
+
+#outofstock{
+  font-weight: bolder;
+  color: rgb(255, 0, 0);
+}

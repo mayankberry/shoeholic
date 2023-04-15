@@ -1,0 +1,325 @@
+body {
+    background-color: rgb(63, 63, 130);
+}
+
+/* Navbar */
+
+.navbar {
+    background-color: transparent;
+}
+
+.nav-item::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0.125rem;
+    background: #ffffff;
+    transition: 0.2s
+}
+
+.nav-item:hover::after {
+    width: 100%
+}
+
+.navbar-dark .navbar-nav .active>.nav-link,
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link.show,
+.navbar-dark .navbar-nav .show>.nav-link,
+.navbar-dark .navbar-nav .nav-link:focus,
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #ffffff
+}
+
+.nav-link {
+    transition: 0.2s;
+}
+nav ul {
+    padding-left: 30vw !important; 
+    padding-right: 23vw !important; 
+    font-size: 20px !important;
+}
+
+.navbar-brand{
+    padding-bottom: 0px !important; 
+    padding-top: 0px !important;
+}
+.video-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.video-responsive iframe{
+    left:0;
+    top:0;
+    height:70%;
+    width:70%;
+    position:absolute;
+}
+
+#buttonsub{
+    background-image: linear-gradient(to bottom, blue, aqua);
+}
+#buttonsub:hover{
+    background-image: linear-gradient(to right, aqua, blue);
+}
+
+
+#account_btn{
+    color: white;
+}
+
+/* Shoe Animation */
+
+
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+section{
+    width: 100%;
+    /* height: 1000px; */
+    position: relative;
+    overflow: hidden;
+}
+
+.parallax-outer {
+    position: relative;
+}
+
+.parallax-outer .image {
+    text-align: right;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.parallax-text {
+    font-size: 25vw;
+    font-weight: 500;
+    position: relative;
+    color: #fafafa;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+.parallax-text:after {
+    content: attr(text);
+    position: absolute;
+    left: 0;
+    color: transparent;
+    text-transform: uppercase;
+    -webkit-text-stroke: 0.20vw #fafafa;
+    z-index: 100;
+}
+
+.zoom {
+    width: 80%;
+    /* max-width: 500px; */
+    animation: Animate 2s cubic-bezier(0.30,1,0.6,1) alternate;  
+}
+
+.parallax-text2 {
+    font-size: 15vw;
+    font-weight: 500;
+    position: relative;
+    color: #fafafa;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+.parallax-text2:after {
+    content: attr(text);
+    position: absolute;
+    left: 0;
+    color: transparent;
+    text-transform: uppercase;
+    -webkit-text-stroke: 0.20vw #fafafa;
+    z-index: 100;
+}
+
+.zoom2 {
+    width: 80%;
+    /* max-width: 500px; */
+    /* animation: Animate 2s cubic-bezier(0.30,1,0.6,1) alternate;  */
+}
+
+.zoom3{
+    width: 80%;
+    animation: Animate2 2s cubic-bezier(0.30,1,0.6,1) alternate;
+}
+
+@keyframes Animate2 {
+    0%, 10% {
+            transform: translate(200vw, 0) rotate(15deg); 
+    }
+}
+
+
+@keyframes Animate {
+    0%, 10% {
+            transform: translate(200vw, 0) rotate(15deg); 
+    }
+    90%, 100% {
+        transform: translate(0px, -20px) rotate(30deg); 
+    }
+}
+
+/* product cards  */
+
+#product_cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    padding: 100px 20px;
+    box-sizing: border-box;
+}
+
+/* #product_cards::before{
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: red;
+
+} */
+
+#product_cards .container{
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#product_cards .container .card{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 20px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(15px);
+}
+
+#product_cards .container .card .imgBx{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    transition: 0.5s ease-in-out;
+}
+
+#product_cards .container .card:hover .imgBx{
+    transform: translateY(-100px);
+}
+
+#product_cards .container .card .imgBx img{
+    max-width: 100%;
+    margin: 0 0 20px;
+    transition: 0.5s ease-in-out;
+}
+
+#product_cards .container .card:hover .imgBx img{
+    transform: translate(-20px,-40px) rotate(-25deg) scale(1.4)
+}
+
+#product_cards .container .card .imgBx h2{
+    color: #fff;
+    font-weight: 600;
+}
+
+#product_cards .container .card .content{
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.5s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+#product_cards .container .card:hover .content{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50px);
+}
+
+#product_cards .container .card .content .color{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+}
+
+#product_cards .container .card .content .color h3{
+    color: #fff;
+    font-weight: 300;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-right: 10px;
+}
+
+#product_cards .container .card .content .color span{
+    width: 20px;
+    height: 20px;
+    background: red;
+    border-radius: 50%;
+    margin: 0 5px;
+    border: 2px solid #fff;
+    box-sizing: border-box;
+}
+
+#product_cards .container .card .content .color span:nth-child(3){
+    background: rgb(0, 0, 0);
+}
+
+#product_cards .container .card .content .color span:nth-child(4){
+    background: rgb(232, 255, 29);
+}
+
+#product_cards .container .card .content a{
+    position: relative;
+    top: 10px;
+    display: inline-block;
+    padding: 12px 30px;
+    background: #fff;
+    border-radius: 40px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: black;
+    text-decoration: none;
+}
+
+
+#product_cards .container .card .content .price{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+}
+
+#product_cards .container .card .content .price h3{
+    color: #fff;
+    font-weight: 300;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-right: 10px;
+}

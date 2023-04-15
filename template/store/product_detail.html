@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% block title %}
+Product
+{% endblock title %}
+
+{% block style %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/productstyle.css' %}">
+{% endblock style %}
+{% block body %}
+
+
+<div class="card-wrapper_pp">
+    <div class="container" id="nameofshoe"><b>
+{{ single_product.product_name.split.0 }}</b>
+</div>
+    <div class="card_pp">
+        <div class="row">
+        <div class="col">
+      <div class="card-content_pp">
+        <div class="shoe-view">
+          <img src="{{ single_product.images.url }}"/>
+          <div class="btn-group_pp">
+            <button class=“shoe-size”>1</button>
+            <button class=“shoe-size”>2</button>
+            <button class=“shoe-size”>3</button>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="col">
+      <div class="card-copy">
+        <p class="category_display">{{single_product.category }} Shoe</p>
+        <h1 id="heading_pp"><b>{{ single_product.product_name }} </b></h1>
+        <p id="content_pp">{{ single_product.description }}.
+        </p>
+        <div class="row">
+          <div class="item-option-select">
+            <h6>Choose Color</h6>
+            <div class="btn-group btn-group-sm btn-group-toggle" data-toggle="buttons" id="c">
+              <label class="btn btn-light">
+                <input type="radio" name="radio_color"> Silver
+              </label>
+              <label class="btn btn-light">
+                <input type="radio" name="radio_color"> Gray
+              </label>
+              <label class="btn btn-light active">
+                <input type="radio" name="radio_color" checked> Gold
+              </label>
+              <label class="btn btn-light">
+                <input type="radio" name="radio_color"> Black
+              </label>
+            </div> 
+          </div>
+        </div> <!-- row.// -->
+        <div class="row">
+          <div class="item-option-select">
+            <h6>Select Size</h6>
+            <div class="btn-group btn-group-sm btn-group-toggle" data-toggle="buttons" id="s">
+              <label class="btn btn-light">
+                <input type="radio" name="radio_size"> S
+              </label>
+              <label class="btn btn-light active">
+                <input type="radio" name="radio_size" checked> M
+              </label>
+              <label class="btn btn-light">
+                <input type="radio" name="radio_size"> L
+              </label>
+              <label class="btn btn-light">
+                <input type="radio" name="radio_size"> XL
+              </label>
+            </div> 
+          </div>
+        </div> <!-- row.// -->
+        <div class="price_pp">₹ {{ single_product.price }}</div>
+        {% if single_product.stock <= 0 %}
+          <h3 id="outofstock">OUT OF STOCK</h3>
+        {% else %}
+          <button class="btn-buy">Add to cart</button>
+        {% endif %}
+      </div>
+    </div>
+    </div>
+</div>
+  </div>
+  
+{% endblock %}
