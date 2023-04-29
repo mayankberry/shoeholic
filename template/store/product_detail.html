@@ -29,6 +29,8 @@ Product
       </div>
     </div>
       <div class="col">
+        <form action="{% url 'add_cart' single_product.id %}" method="POST">
+          {% csrf_token %}
       <div class="card-copy">
         <p class="category_display">{{single_product.category }} Shoe</p>
         <h1 id="heading_pp"><b>{{ single_product.product_name }} </b></h1>
@@ -38,18 +40,11 @@ Product
           <div class="item-option-select">
             <h6>Choose Color</h6>
             <div class="btn-group btn-group-sm btn-group-toggle" data-toggle="buttons" id="c">
+              {% for i in single_product.variation_set.colors %}
               <label class="btn btn-light">
-                <input type="radio" name="radio_color"> Silver
+                <input type="radio" name="color" value="{{ i.variation_value | lower }}" required> {{ i.variation_value | capfirst }}
               </label>
-              <label class="btn btn-light">
-                <input type="radio" name="radio_color"> Gray
-              </label>
-              <label class="btn btn-light active">
-                <input type="radio" name="radio_color" checked> Gold
-              </label>
-              <label class="btn btn-light">
-                <input type="radio" name="radio_color"> Black
-              </label>
+              {% endfor %}
             </div> 
           </div>
         </div> <!-- row.// -->
@@ -57,18 +52,11 @@ Product
           <div class="item-option-select">
             <h6>Select Size</h6>
             <div class="btn-group btn-group-sm btn-group-toggle" data-toggle="buttons" id="s">
+              {% for i in single_product.variation_set.sizes %}
               <label class="btn btn-light">
-                <input type="radio" name="radio_size"> S
+                <input type="radio" name="size" value="{{ i.variation_value | lower }}" required> {{ i.variation_value | capfirst }}
               </label>
-              <label class="btn btn-light active">
-                <input type="radio" name="radio_size" checked> M
-              </label>
-              <label class="btn btn-light">
-                <input type="radio" name="radio_size"> L
-              </label>
-              <label class="btn btn-light">
-                <input type="radio" name="radio_size"> XL
-              </label>
+              {% endfor %}
             </div> 
           </div>
         </div> <!-- row.// -->
@@ -76,12 +64,16 @@ Product
         {% if single_product.stock <= 0 %}
           <h3 id="outofstock">OUT OF STOCK</h3>
         {% else %}
-          <button class="btn-buy">Add to cart</button>
+        <button type="submit" class="btn-buy" id="add">Add to cart</button>
         {% endif %}
       </div>
+    </form>
     </div>
     </div>
 </div>
   </div>
+
+
+
   
 {% endblock %}

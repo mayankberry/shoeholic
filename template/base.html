@@ -26,9 +26,16 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item"> <a href="/signup" class="nav-link"><b> New & Featured </b></a> </li>
-          <li class="nav-item"> <a href="store/" class="nav-link"><b> Store </b></a> </li>
+          <li class="nav-item"> <a href="{% url 'store' %}" class="nav-link"><b> Store </b></a> </li>
           <li class="nav-item"> <a href="/challenges" class="nav-link"><b> Contact Us </b></a> </li>
         </ul>
+
+        <form action="{% url 'search' %}" method="GET">
+        <input id="search" name="keyword"><div class="div1"></div></input>
+      </form>
+
+
+
         {% if user.is_authenticated %}
         <div class="dropdown" style="width:100px;">  
           <button id="account_btn" class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -41,7 +48,7 @@
           </div>
         </div>
         <!-- <p style="color:white; margin-bottom: 0px; margin-right: 20px; font-weight:bold; font-size: large;">Welcome <span style="color:aqua; text-transform: capitalize; ">{{request.user}}</span></p> -->
-        <a href="/logout" class="btn" id="continuebutton">Logout</a>
+        <!-- <a href="/logout" class="btn" id="continuebutton">Logout</a> -->
 
         {% else %}
         <!-- Button to trigger signup modal -->
@@ -54,6 +61,12 @@
           login
         </button>
         {% endif %}
+        <a class="navbar-brand" href="{% url 'cart' %}">
+          <img src="/static/images/cart5.png" alt="cart" style="width: 35px;">
+          <span class="badge badge-pill badge-danger notify" >{{cart_count}}</span>
+        </a>
+
+
         <div class="dot"></div>
   </nav>
   

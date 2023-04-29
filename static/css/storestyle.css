@@ -372,62 +372,41 @@ body {
     margin-right: 10px;
 }
 
-/* #wrapper.toggled #page-content-wrapper {
-    position: absolute;
-    margin-right:60px;
+
+/* paginator buttons */
+
+
+.pagination {
+    box-sizing: border-box;
+    width: 70%;
+    text-align: middle;
+  }
+  
+#pageno {
+    margin: 0 5px;
+    width: 40px;
+    height: 40px;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    border: solid 2px rgba(0, 0, 0, 0.774);
+    background:#f1f1f1b6;
+    border-radius: 50%;
+  }
+
+#pn{
+    margin: 0 5px;
+    width: 90px;
+    height: 40px;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    border: solid 2px rgba(0, 0, 0, 0.774);
+    background:#f1f1f1b6;
+    border-radius: 40%;
 }
 
-#wrapper.toggled {
-    padding-right: 60px;
+.page-item.disabled .page-link{
+    background-color:#363131 !important;
+    color: rgba(255, 255, 255, 0.621) !important;
 }
-
- #wrapper {
-        padding-left: 20px;
-    }
-
-    #wrapper.toggled {
-        padding-left: 0;
-    }
-
-    #sidebar-wrapper {
-        width: 50px;
-    }
-
-    #wrapper.toggled #sidebar-wrapper {
-        width: 140px;
-        
-        
-    }
-    
-    #wrapper.toggled span {
-        visibility:visible;
-        position:relative;
-        left:70px;
-        bottom:13px;
-        
-    }
-
-#wrapper span {
-        visibility:hidden;
-        
-    }
-  #wrapper.toggled   i {
- float:right;
- } 
- 
-  #wrapper   i {
- float:right;
- } 
-
-    #page-content-wrapper {
-        padding: 5px;
-        position: relative;
-    }
-
-    #wrapper.toggled #page-content-wrapper {
-        position: relative;
-        margin-right: 0;
-    }
- */
-
- 
