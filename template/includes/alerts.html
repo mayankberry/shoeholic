@@ -1,0 +1,26 @@
+{% if messages %}
+{% for message in messages %}
+  <div id="message" class="message-container">
+    <div class="alert {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}alert-error{% elif message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}alert-success{% elif message.level == DEFAULT_MESSAGE_LEVELS.INFO %}alert-info{% elif message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}alert-warning{% endif %}" role="alert">
+      <span class="close">&times;</span>
+      {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+      {{ message }}
+    </div>
+  </div>
+{% endfor %}
+{% endif %}
+
+
+<script>
+    setTimeout(function() {
+        $('#message').hide('slow');
+    }, 2000);
+
+    var closeButtons = document.getElementsByClassName("close");
+
+    for (var i = 0; i < closeButtons.length; i++) {
+        closeButtons[i].addEventListener("click", function() {
+            this.parentElement.style.display = "none";
+        });
+    }
+</script>
