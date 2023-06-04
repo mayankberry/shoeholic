@@ -2,12 +2,8 @@
     box-shadow: 0 20px 27px 0 rgb(0 0 0 / 5%);
 }
 
-.container{
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+section{
+  top: 120px;
 }
 
 .card {
@@ -80,6 +76,7 @@
   
   .list-inline-item {
     vertical-align: middle;
+
   }
   
   dl[class=row] {
@@ -124,4 +121,10 @@
 
 #empty{
   margin-right: 20px;
+}
+
+
+
+#heading_place_order{
+  color: white;
 }

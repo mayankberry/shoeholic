@@ -1,0 +1,11 @@
+#tick{
+    border-radius: 100%;
+}
+
+#success{
+    color: white;
+}
+
+#invoiced_to li{
+    text-align: right;
+}

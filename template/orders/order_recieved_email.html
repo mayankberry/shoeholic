@@ -1,0 +1,115 @@
+{% autoescape off %}
+{% load static %}
+
+Hi {{user.first_name}}, 
+
+YOUR ORDER HAS BEEN RECEIVED. 
+
+<div style="margin-top: 80px;">
+    <h2 style="text-align: center;"><u>Order Received</u></h2>
+    <center><img src="cid:logo_name.png" width="150px" height="150px" /></center>
+	<br>
+</div>
+
+<div style="margin: 0 auto; width: 80%; padding: 10px; background: #f1f1f1; margin-top: 50px; margin-bottom: 50px;">
+    <div class="row">
+        <div class="col-md-12">
+
+            <div id="dash_0">
+
+                <div style="padding: 30px;">
+                    <div class="row">
+
+                        <div class="col-lg-6">
+                            <img src="cid:logo.jpg" alt="Invoice logo" width="100px" height="100px" />
+                        </div>
+
+                        <div class="col-lg-6">
+      
+                            <div id="invoiced_to" style="text-align: right;">
+                                <ul style="list-style: none;">
+                                    <li><strong>Invoiced To</strong></li>
+                                    <li>{{order.full_name}}</li>
+                                    <li>{{order.full_address}}</li>
+                                    <li>{{order.city}}, {{order.state}}</li>
+                                    <li>{{order.country}}</li>
+                                </ul>
+                            </div>
+                        </div>
+  
+                        <div class="col-lg-12">
+
+                            <div class="invoice-details" style="margin-top: 25px;">
+                                <div style="background: #fff; padding: 10px;">
+                                    <ul style="list-style: none; margin: 0; padding: 0;">
+                                        <li><strong>Order</strong> #{{order_number}}</li>
+                                        <li><strong>Transaction</strong> {{transID}}</li>
+                                        <li><strong>Order Date:</strong> {{order.created_at}}</li>
+                                        <li><strong>Status:</strong> {{payment.status}}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                           
+                            <div class="invoice-items">
+                                <div style="overflow: hidden; outline: none;" tabindex="0">
+                                    <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 70%; text-align: center;">Products</th>
+                                                <th style="width: 5%; text-align: center;">Qty</th>
+                                                <th style="width: 25%; text-align: center;">Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for item in ordered_products %}
+                                            <tr>
+                                                <td>{{item.product.product_name}}
+                                                    <p style="color: #999; font-size: 12px;">
+                                                        {% if item.variations.all %}
+                                                        {% for i in item.variations.all %}
+                                                        {{ i.variation_category | capfirst }} : {{ i.variation_value |capfirst }} <br>
+                                                        {% endfor %}
+                                                        {% endif %}
+                                                    </p>
+                                                </td>
+                                                <td style="text-align: center;">{{item.quantity}}</td>
+                                                <td style="text-align: center;">₹ {{item.product_price}}</td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th colspan="2" style="text-align: right;">Sub Total:</th>
+                                                <th style="text-align: center;">₹ {{subtotal}}</th>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="2" style="text-align: right;">Tax:</th>
+                                                <th style="text-align: center;">₹ {{order.tax}}</th>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="2" style="text-align: right;">Grand Total:</th>
+                                                <th style="text-align: center;">₹ {{order.order_total}}</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="invoice-footer" style="margin-top: 25px;">
+                                <p style="text-align: center;">Thank you for shopping with us!</p>
+                            </div>
+                        </div>
+   
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+Thank you for ordering with us. 
+
+{% endautoescape %}
