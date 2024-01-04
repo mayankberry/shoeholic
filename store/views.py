@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Product
+from .models import Product, Variation
 from category.models import Category
 from carts.views import _cart_id
 from carts.models import Cart, CartItem
@@ -10,6 +10,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 def store(request, category_slug=None):
     categories = None
     products = None 
+    variation = None
     if category_slug != None:
         categories = get_object_or_404(Category, slug=category_slug)
         products = Product.objects.filter(category=categories, is_available=True)

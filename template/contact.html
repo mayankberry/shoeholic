@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Contact
+{% endblock title %}
+
+{% block style %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/contactstyle.css' %}">
+{% endblock style %}
+
+{% block body %} 
+<div class="contact">
+<div class="ba"></div.ba>
+    <div class="container">
+      <div class="content">
+        <div class="left-side">
+          <div class="address details">
+            <a href="https://goo.gl/maps/1JtvUBQJpKMeEjX59">
+            <i class="fas fa-map-marker-alt"></i></a>
+            <div class="topic">Address</div>
+            <div class="text-one">36, Radhey Shyam Mandir Marg, Block F</div>
+            <div class="text-two"> (Mansarover Garden, New Delhi 110015)</div>
+          </div>
+          <div class="phone details">
+            <a href="tel:+91 9999175087">
+            <i class="fas fa-phone-alt"></i></a>
+            <div class="topic">Phone</div>
+            <div class="text-one">+91 9999175087</div>
+          </div>
+          <div class="email details">
+            <a href="mailto:tarundani@gmail.com">
+            <i class="fas fa-envelope"></i></a>
+            <div class="topic">Email</div>
+            <div class="text-one">ShoeHolic.care@gmail.com</div>
+          </div>
+        </div>
+        <div class="right-side">
+          <div class="topic-text">Send us a message</div>
+          <p>If you have any any types of quries, you can write to us from here. It's our pleasure to help you.</p>
+        <form action="/contact" method="POST">
+          {% csrf_token %}
+          <div class="input-box">
+            <input type="text" id="name" name="name" placeholder="Enter your Username / Full name">
+          </div>
+          <div class="input-box">
+            <input type="email" id="email" name="email" placeholder="Enter your Email" required>
+          </div>
+          <div class="input-box">
+            <input type="phone" id="phone" name="phone" placeholder="Enter Your Phone Number" required>
+          </div>
+          <div class="input-box message-box">
+              <input type="text" id="desc" name="desc" placeholder="Enter your Qurey">
+          </div>
+          <div class="buttonsub">
+            <input type="submit" value="Send Now" style="border-radius:50px; background-color:rgb(186, 147, 225); color:black; font-weight:bold;">
+          </div>
+        </form>
+      </div>
+      </div>
+    </div>
+</div>
+{% endblock body %}

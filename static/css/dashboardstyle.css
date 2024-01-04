@@ -3,11 +3,7 @@ html, body {
 }
 
 .section-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+	top : 180px;
 }
 
 /* message styles */
@@ -59,3 +55,13 @@ html, body {
 	color: #000;
 	cursor: pointer;
   }
+
+
+
+#user_info{
+	text-align: center;
+}
+
+#pass_form label{
+	font-weight: bold;
+}
